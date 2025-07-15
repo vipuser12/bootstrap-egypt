@@ -1,0 +1,627 @@
+/* Base Colors */
+:root {
+  --primary: #206A5D;      /* Nile Green - أخضر نهر النيل */
+  --secondary: #D9A05B;    /* Sand Gold - ذهبي رملي ناعم */
+  --background: #F4EFEA;   /* Papyrus Beige - بيج ورق البردي */
+  --surface: #E3D9CA;      /* Soft Stone - لون حجري ناعم */
+  --text: #2B2B2B;         /* Deep Charcoal - للقراءة الواضحة */
+  --white: #ffffff;
+  --alt-primary: #1fccacff;
+}
+.gradient-bg {
+  background-color: var(--primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff0000, #ffff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.accordion-button{
+background: linear-gradient(90deg, #ff0000, #ff9900, #33cc33, #3399ff, #9900ff);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* General Resets */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary) !important;
+}
+.navbar-brand img {
+  max-height: 60px;
+  filter: brightness(0) invert(1); /* Invert colors for dark bg */
+}
+.nav-link {
+  color: var(--white) !important;
+}
+.nav-link:hover {
+  color: var(--secondary) !important;
+}
+.navbar-toggler {
+  border-color: var(--white);
+}
+
+/* Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  padding: 10px;
+  border-radius: 8px 0 0 8px;
+  z-index: 1000;
+}
+.social-sidebar a {
+  margin: 6px 0;
+  color: var(--primary);
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+.social-sidebar a:hover {
+  color: var(--secondary);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+.btn-primary:hover {
+  background-color: #a07250;
+  border-color: #a07250;
+}
+.btn-outline-success {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+.btn-outline-success:hover {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+/* Accordion */
+.accordion-button {
+  background-color: var(--surface);
+  color: var(--text);
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.accordion-body {
+  background-color: var(--white);
+}
+
+/* Carousel Captions */
+.carousel{
+  height: 100vh;
+}
+.carousel-item img{
+  height: 100vh;
+  object-fit: cover;
+}
+.carousel-caption h5,
+.carousel-caption p{
+  background-color: #206a5db2;
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+}
+.carousel-caption button{
+    background-color: #206A5D;
+
+}
+/* Section Titles */
+h1.bg-primary,
+h2.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+/* Inputs and Forms */
+input.form-control {
+  border: 1px solid var(--secondary);
+}
+input.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 5px var(--primary);
+}
+
+/* translation */
+.input-group{
+  background-color: var(--alt-primary);
+}
+
+/* Background Image */
+.background-img {
+  background-image: url("https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638891420/EducationHub/photos/temple-of-nefertari.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  background-attachment: fixed;
+}
+
+
+/* Popular distinations */
+.popular-destinations .card {
+  position: relative;
+  overflow: hidden;
+}
+
+.popular-destinations .card::before,
+.popular-destinations .card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 140, 0.2);
+  z-index: 1;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.5s ease;
+  pointer-events: none; /* عشان الماوس يعدي منها */
+}
+
+.popular-destinations .card::after {
+  transform-origin: bottom right;
+}
+
+/* لما تعمل hover على الكارت */
+.popular-destinations .card:hover::before,
+.popular-destinations .card:hover::after {
+  transform: scale(1);
+  color: white;
+}
+
+.popular-destinations.card {
+  border: none;
+  transition: transform 0.3s ease;
+  background-color: var(--surface);
+}
+.popular-destinations.w-75{
+  width: 90% !important;
+}
+.card-img-top{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.card-img-top img{
+  object-fit: cover;
+}
+.popular-destinations.card:hover {
+  transform: translateY(-5px);
+}
+
+/* 2nd-background image */
+.background-img2 {
+  background-image: url("https://www.touristegypt.com/wp-content/uploads/2023/03/giza-pyramids-cairo-egypt-with-palm.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+  background-attachment: fixed;
+  object-fit: cover;
+}
+
+/* Thanks for */
+.card-img-overlay-box {
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  display: flex;
+  transition: transform 0.3s ease;
+  border-radius: 5%;
+}
+
+.card-img-overlay-box:hover {
+  transform: scale(0.95); 
+}
+
+.card-img-overlay-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card-img-overlay-box:hover::after {
+  opacity: 1; /* إظهار overlay عند hover */
+}
+
+.card-img-overlay-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); /* نصف شفاف */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.overlay-text .bottom img{
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 3px solid lightblue;
+}
+
+/* Egynews */
+.egy-news .card{
+  width: 90%;
+  margin: 0 auto;
+  color: var(--text);
+  border: none;
+  transition: transform 0.3s ease;
+  background-color: var(--surface);
+  padding: 0;
+  height: auto; /* خليها auto عشان تستجيب للمحتوى */
+  min-height: 350px; /* اختيارية */
+}
+
+.egy-news .card-body {
+  padding: 0;
+}
+
+.egy-news .card .left {
+  padding: 30px;
+  width: 70%;
+  height: 100%;
+}
+
+.egy-news .card:hover{
+  transform: translateY(-5px);
+}
+
+.egy-news .card .right{
+  width: 35%;
+  height: 100%;
+}
+
+.egy-news .card .right img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.egy-news .card .right .custom-clip{
+  clip-path: polygon(6.00% 0.00%,100.00% 0.00%,100.00% 100.00%,25.00% 100.00%);
+}
+
+.egy-news .card .right .clip2{
+  clip-path: polygon(0.00% 0.00%,100% 0%,75% 100%,0.00% 100.00%);
+
+}
+
+.egy-news .card .right .clip4{
+  clip-path: polygon(0.00% 0.00%,100% 0%,75% 100%,0.00% 100.00%);
+}
+
+.egy-news .card .icons span{
+  background-color: rgba(163, 164, 164, 0.7);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.egy-news .card .left .card-text{
+  position: relative;
+  padding-right: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.egy-news .card .left .span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  height: 4px;
+  background-color: red;
+  transition: width 0.3s ease;
+}
+
+.egy-news .card:hover .left .span::after {
+  width: 40%;
+  background-color: blue;
+} 
+
+@media (max-width: 768px){
+  .egy-news .card-body .right .custom-clip {
+    width: 100% !important;
+    clip-path: none !important;
+    border-radius: 0 !important;
+  }
+  .egy-news .card-body .left{
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  .last-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media (max-width: 1024px){
+  .egy-news .card-body .right .custom-clip {
+    width: 100% !important;
+    clip-path: none !important;
+    border-radius: 0 !important;
+  }
+  .egy-news .card-body .left{
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  .last-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px){
+  
+  .egy-news .card {
+    height: 400px;
+}
+
+  .egy-news .card-body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+  .egy-news .row1 .card-body,
+  .egy-news .row3 .card-body {
+    flex-direction: row-reverse;
+  }
+
+  .egy-news .card-body .right,
+  .egy-news .card-body .left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .egy-news .card-body .left {
+  width: 70%;
+}
+
+.egy-news .card-body .right{
+  width: 30%;
+}
+
+.egy-news .card-body .right {
+    order: 1;
+    overflow: hidden;
+}
+
+.egy-news .card-body .right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.egy-news .card-body .left {
+    order: 2;
+    padding: 2rem;
+}
+
+}
+.episode{
+  background-color:#C0392B !important;
+  color: white;
+  transition: 0.5s;
+}
+.episode:hover{
+  background-color:#27AE60 !important;
+  color: white;
+}
+
+/*Social icons */
+.items{
+  width: 222px;
+  height: 222px;
+  box-shadow: 5px 5px 15px 0px #c02e3d;
+  background-image: url(https://diaa-codes.github.io/bootstrap-project/images/linked%20in.jpeg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+.item2{
+  background-image: url(https://diaa-codes.github.io/bootstrap-project/images/whatsapp.png);
+  background-size: cover;
+  background-position: center;
+}
+.item3{
+  background-image: url(https://diaa-codes.github.io/bootstrap-project/images/youtube.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.item4{
+  background-image: url(https://diaa-codes.github.io/bootstrap-project/images/insta.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+.items h5{
+  color: #0077B5;
+}
+.h62{
+  margin-top: 150px;
+}
+
+
+/* Footer container - horizontal layout */
+footer .top0 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #e0e0e0; /* Light grey text for readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Each column - flexible width but balanced */
+footer .top1,
+footer .top2,
+footer .top3 {
+  flex: 1 1 300px; /* Grow/shrink with a base of 300px */
+  padding: 15px;
+  box-sizing: border-box;
+  min-width: 280px; /* Prevent columns getting too narrow */
+}
+
+/* Logo styling */
+footer .top img {
+  max-width: 160px;
+  height: auto;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1); /* Invert colors for dark bg */
+}
+
+/* Adjust image margin for horizontal text alignment inside .top */
+footer .top.d-flex.flex-column.flex-md-row img {
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  footer .top.d-flex.flex-column.flex-md-row img {
+    margin-bottom: 0;
+    margin-right: 15px;
+}
+}
+
+/* List styling */
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem; /* ~15px */
+  line-height: 1.5;
+  color: #cccccc;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul li strong {
+  font-size: 1.1rem; /* ~17.5px */
+  color: #ffffff;
+}
+
+/* Text next to logo inside .top */
+footer .top p {
+  font-size: 1rem; /* 16px */
+  color: #dcdcdc;
+  margin: 0;
+}
+
+/* Bottom copyright area */
+footer .bottom {
+  text-align: center;
+  font-size: 0.9rem; /* ~14.5px */
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 30px;
+  color: #999999;
+}
+
+/* Responsive - stack columns on small screens */
+@media (max-width: 768px) {
+  footer .top0 {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+  }
+
+  footer .top1,
+  footer .top2,
+  footer .top3 {
+    width: 100%;
+    padding: 20px 0;
+    min-width: auto;
+  }
+
+  footer .top img {
+    max-width: 120px;
+  }
+
+  footer ul {
+    font-size: 0.9rem; /* Slightly smaller text on mobile */
+  }
+
+  footer ul li strong {
+    font-size: 1rem;
+  }
+
+  footer .top p {
+    font-size: 0.95rem;
+  }
+}
+footer .bottom-last p span{
+  color: #69ebd3ff;
+  animation: spinScale 4s linear infinite;
+}
+@keyframes spinScale {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+
+
